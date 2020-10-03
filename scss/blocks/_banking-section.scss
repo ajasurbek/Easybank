@@ -1,0 +1,52 @@
+.mains {
+  position: relative;
+}
+.banking__container-left {
+  margin-right: 50px;
+}
+.banking__heading {
+    max-width: 408px;
+    margin: 0;
+    padding-bottom: 24px;
+    margin-top: 170px;
+    font-size: 56px;
+    line-height: 64px;
+    margin-bottom: 24px;
+    line-height: 64px;
+    font-weight: 100;
+    color: #2D314D;;
+  }
+
+.banking__text {
+  width: 447px;
+  margin: 0;
+  margin-bottom: 36px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 28px;
+}
+.banking__button {
+  margin-bottom: 170px;
+}
+.banking__img {
+	position: absolute;
+	top: -270px;
+	right: -185px;
+	max-width: 115%;
+  height: auto;
+}
+@include breakpoint-down (1000px) {
+  .banking__container-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .banking__heading {
+    margin-top: 0px;
+  }
+  .banking__img {
+    position: static;
+    right: 100px;
+  }
+}

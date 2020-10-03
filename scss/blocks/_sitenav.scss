@@ -1,0 +1,115 @@
+.sitenav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  margin-left: 14px;
+  margin-right: 14px;
+  list-style-type: none;
+}
+
+.sitenav__item {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.sitenav__link {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.1px;
+  color: $text-color;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
+    color: $dark-text-color;
+  }
+
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    content: "";
+    opacity: 0;
+    background-color: $green;
+    background-image: $gradient-bg;
+    background-repeat: no-repeat;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.sitenav__item--active .sitenav__link {
+  color: $dark-text-color;
+}
+
+.sitenav__item--active .sitenav__link::after,
+.sitenav__link:hover::after {
+  opacity: 1;
+}
+
+@include breakpoint-down (850px) {
+//   // VARIANT A - MENYU PASTGA TUSHIB OLADI
+
+//   // .sitenav {
+//   //   order: 1;
+//   //   width: 100%;
+//   // }
+
+
+//   // VARIANT B - MENYU BERKINIB OLADI
+
+//   .sitenav {
+//     display: none;
+//   }
+
+  .sitenav__list {
+    position: absolute;
+    z-index: 1;
+    top: 24px;
+    left: 24px;
+    right: 24px;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+
+  .site-header--nojs .sitenav__list {
+    position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding: 0;
+  }
+
+  .sitenav__item {
+    margin: 0;
+  }
+
+  .sitenav__link {
+    padding: 12px;
+    border-radius: 4px;
+    color: $dark-text-color;
+
+    &:hover,
+    .sitenav__item--active & {
+      background-color: $green;
+      background-image: $gradient-bg;
+      color: #fff;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
